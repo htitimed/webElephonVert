@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webElephonVert';
+  showHideSideBar: boolean =false;
+  onAffiche(event){
+    this.showHideSideBar=event;
+  }
 }
 
