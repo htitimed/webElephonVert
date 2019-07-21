@@ -1,6 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import {SouchMockService} from './souch.mock.service';
-import {Souch} from '../shared/souch';
+import { Component, OnInit } from '@angular/core';
+import { SouchMockService } from './souch.mock.service';
+import { Souch } from '../shared/souch';
 
 
 @Component({
@@ -8,12 +8,12 @@ import {Souch} from '../shared/souch';
     templateUrl: './souch.component.html',
     styleUrls: ['./souch.component.css']
 })
-export class SouchComponent implements OnInit{
-    souchs : Souch[];
-    constructor(private souchService : SouchMockService){
+export class SouchComponent implements OnInit {
+    souchs: Souch[];
+    constructor(private souchService: SouchMockService) {
 
     }
-    ngOnInit(){
+    ngOnInit() {
         this.souchs = this.souchService.getSouchs();
     }
 }

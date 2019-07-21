@@ -1,8 +1,24 @@
-<h3>hello world</h3>
-<ul>
-    <li *ngFor="let souch of souchs">
-        strain Code: {{souch.strainCode}},
-        Quantity Of Storage: {{souch.QuantityOfStorage}},
-        original Code: {{souch.originalCode}}
-    </li>
-</ul>
+<h3>SOUCHS </h3>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>strainCode</th><th>Quantite of storage</th><th>original code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let souch of souch">
+                        <td>{{souch.strainCode}} </td>
+                        <td>{{souch.QuantityOfStorage}} </td>
+                        <td>{{souch.originalCode}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-5">
+form
+        </div>
+    </div>
+</div>
