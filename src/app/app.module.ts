@@ -11,13 +11,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SouchComponent,
     NavbarComponent,
     SidebarComponent,
-    ContentComponent
+    ContentComponent,
+    
   ],
   imports: [
     BrowserModule,
