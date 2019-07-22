@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { SouchMockService } from './souch.mock.service';
 import { Souch } from '../shared/souch';
+
 
 
 @Component({
@@ -10,8 +13,13 @@ import { Souch } from '../shared/souch';
 })
 export class SouchComponent implements OnInit {
     souchs: Souch[];
-    constructor(private souchService: SouchMockService) {
-
+    souchForm: FormGroup;
+    constructor(private souchService: SouchMockService, private fb: FormBuilder) {
+        this.souchForm = this.fb.group({
+            strainCode: ['', Validators.required],
+            QuantityOfStorage: '',
+            originalCode: ''
+        });
     }
     ngOnInit() {
         this.souchs = this.souchService.getSouchs();

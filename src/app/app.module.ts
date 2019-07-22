@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -25,7 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
 
   ],
   imports: [
-    BrowserModule, AppRoutingModule
+    BrowserModule, AppRoutingModule, ReactiveFormsModule
 
   ],
   providers: [SouchMockService],
