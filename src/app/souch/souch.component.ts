@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { SouchMockService } from './souch.mock.service';
+import { SouchService } from './souch.service';
 import { Souch } from '../shared/souch';
+import { Subscriber } from 'rxjs';
 
 
 
@@ -14,7 +15,7 @@ import { Souch } from '../shared/souch';
 export class SouchComponent implements OnInit {
     souchs: Souch[];
     souchForm: FormGroup;
-    constructor(private souchService: SouchMockService, private fb: FormBuilder) {
+    constructor(private souchService: SouchService, private fb: FormBuilder) {
         this.souchForm = this.fb.group({
             strainCode: ['', Validators.required],
             QuantityOfStorage: '',
@@ -22,6 +23,22 @@ export class SouchComponent implements OnInit {
         });
     }
     ngOnInit() {
-        this.souchs = this.souchService.getSouchs();
+        this.loadSouchs();
+    }
+    loadSouchs() {
+        this.souchService.getSouchs().subscribe(
+            data => { this.souchs = data },
+            error => { console.log('An error was occured.') },
+            () => { console.log('loading souchs was done.') }
+        );
+    }
+
+    addSouch() {
+        const s = this.souchForm.value;
+        this.souchService.addSouch(s).subscribe(
+            res => {
+                this.loadSouchs();
+            }
+        );
     }
 }

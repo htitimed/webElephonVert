@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +12,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SouchService } from './souch/souch.service';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -22,14 +24,15 @@ import { AppRoutingModule } from './app-routing.module';
     SidebarComponent,
     ContentComponent,
     DashboardComponent,
+    
 
 
   ],
   imports: [
-    BrowserModule, AppRoutingModule, ReactiveFormsModule
+    BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule 
 
   ],
-  providers: [SouchMockService],
+  providers: [SouchMockService, SouchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

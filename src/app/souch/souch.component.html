@@ -24,7 +24,8 @@
                             <label>Original Code :</label>
                             <input type="text" class="form-control" FormControlName="originalCode" />
                         </div>
-                        <button class="btn btn-success" [disabled]="souchForm.pristine || souchForm.invalid">Add</button>
+                        <button class="btn btn-success" [disabled]="souchForm.pristine || souchForm.invalid" 
+                        (click)="addSouch()" >Add</button>
                     </form>
                 </div>
                 <div class="card-footer">
