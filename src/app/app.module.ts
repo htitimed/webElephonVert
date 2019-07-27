@@ -13,7 +13,7 @@ import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SouchService } from './souch/souch.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,12 +24,13 @@ import { HttpClientModule } from '@angular/common/http'
     SidebarComponent,
     ContentComponent,
     DashboardComponent,
-    
+
+
 
 
   ],
   imports: [
-    BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule 
+    BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule
 
   ],
   providers: [SouchMockService, SouchService],

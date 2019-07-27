@@ -3,7 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { SouchService } from './souch.service';
 import { Souch } from '../shared/souch';
-import { Subscriber } from 'rxjs';
+
+
 
 
 
@@ -27,18 +28,19 @@ export class SouchComponent implements OnInit {
     }
     loadSouchs() {
         this.souchService.getSouchs().subscribe(
-            data => { this.souchs = data },
-            error => { console.log('An error was occured.') },
-            () => { console.log('loading souchs was done.') }
+            data => { this.souchs = data; },
+            error => { console.log('An error was occured.'); },
+            () => { console.log('loading souchs was done.'); }
         );
     }
 
     addSouch() {
-        const s = this.souchForm.value;
-        this.souchService.addSouch(s).subscribe(
+        const ss = this.souchForm.value;
+        this.souchService.addSouch(ss).subscribe(
             res => {
                 this.loadSouchs();
             }
         );
     }
 }
+
