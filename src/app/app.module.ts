@@ -12,8 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SouchService } from './souch/souch.service';
-import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -30,10 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
 
   ],
   imports: [
-    BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule
+    BrowserModule, AppRoutingModule, ReactiveFormsModule
 
   ],
-  providers: [SouchMockService, SouchService],
+  providers: [SouchMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
